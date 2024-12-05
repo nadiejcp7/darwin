@@ -4,10 +4,10 @@ interface Props {
     subtitle: string;
     description: string[];
     imageFirst: boolean;
-    isList?: boolean;
+    check?: string
 }
 
-export default function Contenedor({ imsg, title, subtitle, description, imageFirst, isList = false }: Props) {
+export default function Contenedor({ imsg, title, subtitle, description, imageFirst, check }: Props) {
 
     if (Number(window.innerWidth) < 860) {
         imageFirst = true;
@@ -21,7 +21,7 @@ export default function Contenedor({ imsg, title, subtitle, description, imageFi
 
     const checkList = (text: string) => (
         <div className="activities-container-checklist">
-            <img src="./public/check.png" alt="" width={'20px'} height={'20px'} />
+            <img src={check} alt="" width={'20px'} height={'20px'} />
             <p className="activities-container-checklist-text">{text}</p>
         </div>
     )
@@ -35,7 +35,7 @@ export default function Contenedor({ imsg, title, subtitle, description, imageFi
     const text = () => (
         <div className="hidden activities-container-info">
             {description.map((item) => (
-                isList ? checkList(item) : paragraph(item)
+                check ? checkList(item) : paragraph(item)
             ))}
         </div>
     );

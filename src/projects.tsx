@@ -3,11 +3,8 @@ import Contenedor from './body/contenedor'
 import Informacion from './body/informacion';
 import ContactBar from './body/ContactBar';
 import Inicio from './body/Inicio';
-import Footer from './footer/Footer';
-import Header from './header/Header';
 
 import { useEffect } from "react";
-
 
 import truss from "./assets/truss.jpeg"
 import floor from "./assets/floor.jpg"
@@ -18,32 +15,22 @@ import midRise2 from "./assets/midRise2.jpeg"
 import smallRise2 from "./assets/smallRise2.jpeg"
 
 interface Props {
-    indexSelected: number
-    logo: string
-    phoneHeader: string
-    mapHeader: string
-
-    socialSrc: string[]
-    contactSrc: string[]
+    servicesSrc: string[]
+    sierra: string
+    check: string
 }
+export default function Projects({ servicesSrc, sierra, check }: Props) {
 
-export default function Projects({ indexSelected, logo, phoneHeader, mapHeader, socialSrc, contactSrc }: Props) {
-    return (
-        <>
-            <Header indexSelected={indexSelected} logo={logo} phone={phoneHeader} map={mapHeader} />
-            <Body />
-            <Footer indexSelected={indexSelected} logo={logo} socialSrc={socialSrc} contactSrc={contactSrc} />
-        </>
-    );
-}
-
-function Body() {
-
-    const projects = ['ROOF TRUSSES', 'FLOOR JOISTS', 'WALL PANELS']
-    const linksProjects = [truss, floor, wall]
-    const projectsDescriptions = ['Engineered wood roof trusses offer greater span capacity, strength, durability, and efficiency compared to traditional methods, making them economically and environmentally beneficial. They also simplify complex roofing designs, adding versatility to architectural projects.',
+    const buildingsTitles = ['ROOF TRUSSES', 'FLOOR JOISTS', 'WALL PANELS']
+    const buildingsSrc = [truss, floor, wall]
+    const buildingsDescriptions = ['Engineered wood roof trusses offer greater span capacity, strength, durability, and efficiency compared to traditional methods, making them economically and environmentally beneficial. They also simplify complex roofing designs, adding versatility to architectural projects.',
         'Our floor framework features wooden joists, spaced at regular intervals. These advanced joists control deflection and vibration, reduce squeaks, and often eliminate mid-bearing supports. The open web design efficiently routes utilities through the floor, making them strong and durable for any construction project.',
         'Wall panels simplify construction by providing pre-fabricated sections, enhancing structural integrity and improving insulation and soundproofing. They offer consistent quality control and reduce on-site labor, making them versatile and efficient for both residential and commercial projects.']
+
+    const servicesTitles = ['RENT EQUIPMENT', 'COMMERCIAL CONSTRUCTION', 'SPECIALIZED SERVICES']
+    const servicesDescriptions = ['Access high-quality construction equipment for your projects with flexible rental plans. From heavy machinery to specialized tools, we provide reliable solutions to meet your needs.',
+        'Build modern, efficient, and durable commercial spaces tailored to your business goals. We specialize in hotels, houses, offices, retail stores, and industrial facilities with exceptional attention to detail.',
+        'Transform your projects with our innovative and customized solutions. From green building techniques to interior design, we bring expertise to every detail.']
 
     const msgs = (
         <>
@@ -78,12 +65,12 @@ function Body() {
 
     return (
         <>
-            <Inicio msg={msgs} imgSrc={background} />
+            <Inicio msg={msgs} imgSrc={background} sierra={sierra} />
             <Contenedor imsg={midRise2} title="Mid-Rise Subdivisions: The Perfect Blend of Comfort and Convenience"
                 subtitle='Enjoy Modern Living in Prime Locations with Accessible Amenities'
                 description={["Prime Locations", "Space Efficiency", "Sustainable Living", "Modern Amenities",
                     "Affordable Luxury", "Community-Oriented", "Future Growth Potential"]}
-                imageFirst={true} isList={true} />
+                imageFirst={true} check={check} />
             <Contenedor imsg={customHomes2} title='Custom Homes: Tailored to Your Vision'
                 subtitle='Designing Spaces that Reflect Your Unique Lifestyle'
                 description={["Custom homes are the perfect solution for those who want their living space to be a true reflection of their personality and needs. From choosing the layout and materials to selecting the finishing touches, custom homes offer complete control over the design process.",
@@ -94,8 +81,9 @@ function Body() {
                 subtitle='Key Elements That Make Small Rise Subdivisions Perfect for Modern Living'
                 description={["Efficient Land Use", "Community-Oriented Design", "Affordable Housing Options", "Increased Privacy",
                     "Better Access to Amenities", "Sustainable Design Features", "Aesthetic Appeal"]}
-                imageFirst={true} isList={true} />
-            <Informacion title="BUILDING COMPONENTS" imgs={linksProjects} titles={projects} descriptions={projectsDescriptions} />
+                imageFirst={true} check={check} />
+            <Informacion title="BUILDING COMPONENTS" imgs={buildingsSrc} titles={buildingsTitles} descriptions={buildingsDescriptions} />
+            <Informacion title="CHECK OUR SERVICES" imgs={servicesSrc} titles={servicesTitles} descriptions={servicesDescriptions} buttonRef={'/services'} />
 
         </>);
 }

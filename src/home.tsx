@@ -8,25 +8,25 @@ import './body/body.css'
 
 import { useEffect } from "react";
 
-import rent from "./assets/rent.jpeg"
-import commercial from "./assets/image1.webp"
-import sustainable from "./assets/sustainable.jpeg"
-import smallRise from "./assets/smallRise.jpg"
-import midRise from "./assets/midRise.jpg"
-import home from "./assets/HOME1.jpg"
 import background from "./assets/body.jpeg"
 import expertise from "./assets/expertise.jpeg"
 import modern from "./assets/modern.jpeg"
 import contractor from "./assets/contractor.jpeg"
 import trends from "./assets/trends.jpeg"
 
-export default function Home() {
+interface Props {
+    servicesSrc: string[]
+    projectsSrc: string[]
+    sierra: string
+    check: string
+}
 
-    const informarTitles = ['RENT EQUIPMENT', 'COMMERCIAL CONSTRUCTION', 'SPECIALIZED SERVICES']
-    const informarDescriptions = ['Access high-quality construction equipment for your projects with flexible rental plans. From heavy machinery to specialized tools, we provide reliable solutions to meet your needs.',
+export default function Home({ servicesSrc, projectsSrc, sierra, check }: Props) {
+
+    const servicesTitles = ['RENT EQUIPMENT', 'COMMERCIAL CONSTRUCTION', 'SPECIALIZED SERVICES']
+    const servicesDescriptions = ['Access high-quality construction equipment for your projects with flexible rental plans. From heavy machinery to specialized tools, we provide reliable solutions to meet your needs.',
         'Build modern, efficient, and durable commercial spaces tailored to your business goals. We specialize in hotels, houses, offices, retail stores, and industrial facilities with exceptional attention to detail.',
         'Transform your projects with our innovative and customized solutions. From green building techniques to interior design, we bring expertise to every detail.']
-    const informarLinks = [rent, commercial, sustainable]
 
     const indicadores = ['WHO WE ARE', 'OUR MISSION', 'OUR VISION']
     const subindicadores = ['A Team Built on Expertise and Passion', 'Building Excellence, Delivering Results', 'Shaping the Future of Construction']
@@ -35,7 +35,6 @@ export default function Home() {
         "We aim to be a leader in the construction industry by embracing cutting-edge technologies and sustainable practices. Our goal is to build lasting relationships and deliver projects that empower communities and businesses. Excellence, reliability, and trust define our vision."]
 
     const projects = ['Small-Rise', 'Mid-Rise', 'Custom Houses']
-    const linksProjects = [smallRise, midRise, home]
     const projectsDescriptions = ['We specialize in crafting charming and functional small-rise communities. These developments are perfect for families and individuals seeking modern, well-designed homes in cozy, close-knit neighborhoods.',
         'Our mid-rise subdivisions combine spacious living with urban convenience. Designed for versatility and comfort, these developments offer a balance between community charm and modern amenities.',
         'Bring your dream home to life with our custom house services. From concept to completion, we work closely with you to design and build a home that reflects your unique style and meets your specific needs.']
@@ -73,13 +72,13 @@ export default function Home() {
 
     return (
         <>
-            <Inicio msg={msgs} imgSrc={background} />
-            <Informacion title="CHECK OUR SERVICES" imgs={informarLinks} titles={informarTitles} descriptions={informarDescriptions} buttonRef={'/services'} />
+            <Inicio msg={msgs} imgSrc={background} sierra={sierra} />
+            <Informacion title="CHECK OUR SERVICES" imgs={servicesSrc} titles={servicesTitles} descriptions={servicesDescriptions} buttonRef={'/services'} />
             <Contenedor imsg={expertise} title="Our Team's Expertise and Certifications"
                 subtitle='Certified Professionals Committed to Excellence'
                 description={["Highly Skilled Professionals", "Relevant Certifications", "Industry-Standard Safety Training",
                     "Project Management Qualifications", "Specialized Expertise", "Commitment to Excellence", "Ongoing Learning and Development"]}
-                imageFirst={true} isList={true} />
+                imageFirst={true} check={check} />
             <ContactBar msg='Eager to work together?' />
             <Informar title={indicadores} subtitle={subindicadores} description={indicadoresDescriptions} />
             <Contenedor imsg={modern} title='Specialized Knowledge in Modern Construction Techniques'
@@ -88,12 +87,12 @@ export default function Home() {
                     "Our specialists in concrete, steel, and wood frame construction ensure that we can deliver superior results across a diverse range of building projects, from residential to commercial developments."]}
                 imageFirst={false} />
 
-            <Informacion title="CHECK OUR PROJECTS" imgs={linksProjects} titles={projects} descriptions={projectsDescriptions} buttonRef={'/projects'} />
+            <Informacion title="CHECK OUR PROJECTS" imgs={projectsSrc} titles={projects} descriptions={projectsDescriptions} buttonRef={'/projects'} />
 
             <Contenedor imsg={contractor} title='How to Choose the Right Contractor' subtitle="Partnering with Experts for a Stress-Free Construction Experience"
                 description={["Check Credentials and Licensing", "Review Past Work and References", "Evaluate Experience", "Get Multiple Quotes",
                     "Assess Communication Skills", "Check for Specialization", "Look for Warranty and After-Service Support"]}
-                imageFirst={true} isList={true} />
+                imageFirst={true} check={check} />
 
             <Contenedor imsg={trends} title='Top 5 Construction Trends to Watch in 2024' subtitle='How We Lead the Way in Innovative Building Solutions'
                 description={["The future of construction is here, and at Darwin Construction Inc, we are at the forefront of industry advancements. From sustainable building practices and modular designs to integrating smart technologies, our team adopts cutting-edge trends to meet modern demands.",

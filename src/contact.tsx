@@ -1,20 +1,15 @@
 import { useEffect } from 'react';
-import Footer from './footer/Footer';
-import Header from './header/Header';
 
 import './body/body.css'
 import './body/contact.css'
 
 interface Props {
-    indexSelected: number
-    logo: string
-    phoneHeader: string
-    mapHeader: string
-
-    socialSrc: string[]
-    contactSrc: string[]
+    phone: string
+    mail: string
+    map: string
 }
-function Body() {
+
+export default function Contact({ phone, mail, map }: Props) {
     const handleScroll = () => {
         const elements = document.querySelectorAll('.hidden');
         elements.forEach(el => {
@@ -41,6 +36,7 @@ function Body() {
     const hours = ['8:00 - 18:00', '8:00 - 18:00', '8:00 - 18:00', '8:00 - 18:00', '8:00 - 18:00', '9:00 - 14:00'];
 
     const days = ['Monday', 'Tuesday', 'Wednesday', 'Thrusday', 'Friday', 'Saturday'];
+
     return (
         <>
             <div className='contact-container'>
@@ -68,24 +64,24 @@ function Body() {
                             <div className='contact-info'>
                                 <div className='contact-general-button'>
                                     <a className='request-button appear' href='tel:+12896813004' target='_blank'>
-                                        ASK FOR A FREE QUOTE
+                                        SCHEDULE AN APPOINTMENT
                                     </a>
                                 </div>
                                 <div className="contact-general-data">
                                     <a href="tel:+12896813004" target="_blank" className="items-header no-border">
-                                        <img src="./public/phone.png" alt="Phone Icon" width="20px" height="20px" />
+                                        <img src={phone} alt="Phone Icon" width="20px" height="20px" />
                                         (289) 681-3004
                                     </a>
                                 </div>
                                 <div className="contact-general-data">
                                     <a href="mailto:darwinconstruction@outlook.com" target="_blank" className="items-header no-border">
-                                        <img src="./public/mail.png" alt="Location Icon" width="20px" height="20px" />
+                                        <img src={mail} alt="Location Icon" width="20px" height="20px" />
                                         darwinconstruction@outlook.com
                                     </a>
                                 </div>
                                 <div className="contact-general-data">
                                     <a href="https://maps.app.goo.gl/hDeMg2C1bCQN6SsT7" target="_blank" className="items-header no-border">
-                                        <img src="./public/map.png" alt="Location Icon" width="20px" height="20px" />
+                                        <img src={map} alt="Location Icon" width="20px" height="20px" />
                                         310 Barton St E Hamilton, ON
                                     </a>
                                 </div>
@@ -95,15 +91,4 @@ function Body() {
                 </div>
             </div>
         </>);
-}
-
-
-export default function Contact({ indexSelected, logo, phoneHeader, mapHeader, socialSrc, contactSrc }: Props) {
-    return (
-        <>
-            <Header indexSelected={indexSelected} logo={logo} phone={phoneHeader} map={mapHeader} />
-            <Body />
-            <Footer indexSelected={indexSelected} logo={logo} socialSrc={socialSrc} contactSrc={contactSrc} />
-        </>
-    );
 }

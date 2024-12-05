@@ -3,16 +3,17 @@ import { ReactNode } from "react";
 interface Props {
     msg: ReactNode
     imgSrc: string
+    sierra: string
 }
 
-function Inicio({ msg, imgSrc }: Props) {
+function Inicio({ msg, imgSrc, sierra }: Props) {
 
     const divStyle = {
         backgroundImage: `url(${imgSrc})`,
-        backgroundSize: 'cover', // Example styling
+        backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
-        height: '700px',
+        height: '900px',
     };
 
     return (
@@ -24,7 +25,7 @@ function Inicio({ msg, imgSrc }: Props) {
                             <h1 className="inicio-container-title">{msg}</h1>
                         </div>
                         <a className="hidden saw-container" href="tel:+12896813004">
-                            <img src="./public//sierra.png" alt="Saw Blade" className="saw-blade" />
+                            <img src={sierra} alt="Saw Blade" className="saw-blade" />
                         </a>
                     </div>
                 </div>
