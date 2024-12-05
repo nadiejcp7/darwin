@@ -10,7 +10,7 @@ interface Props {
 export default function About({ indexSelected, logo }: Props) {
     return (
         <>
-            <Header indexSelected={indexSelected} logo={logo} />
+            <Header indexSelected={indexSelected} logo={logo} phone={'./assets/phone.png'} map={'./assets/map.png'} />
             <BodyAbout />
             <Footer indexSelected={indexSelected} />
         </>
