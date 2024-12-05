@@ -5,9 +5,11 @@ interface Props {
     existsButton?: boolean
     indexSelected: number
     logo: string
+    phone: string
+    map: string
 }
 
-export default function header({ existsButton = true, indexSelected, logo }: Props) {
+export default function header({ existsButton = true, indexSelected, logo, phone, map }: Props) {
     const elements = ['Home', 'About', 'Services', 'Projects', 'Contact'];
     const links = ['./home', './about', './services', './projects', './contact'];
 
@@ -18,11 +20,11 @@ export default function header({ existsButton = true, indexSelected, logo }: Pro
             <div className='header-container-1'>
                 <div className='general-data'>
                     <a href='tel:+12896813004' target='_blank' className='items-header add-border'>
-                        <img src="./public/phone.png" alt="Phone Icon" width={'20px'} height={'20px'} />
+                        <img src={phone} alt="Phone Icon" width={'20px'} height={'20px'} />
                         (289) 681-3004
                     </a>
                     <a href='https://maps.app.goo.gl/hDeMg2C1bCQN6SsT7' target='_blank' className='items-header'>
-                        <img src="./public/map.png" alt="Location Icon" width={'20px'} height={'20px'} />
+                        <img src={map} alt="Location Icon" width={'20px'} height={'20px'} />
                         310 Barton St E Hamilton, ON
                     </a>
                 </div>

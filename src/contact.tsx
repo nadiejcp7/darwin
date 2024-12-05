@@ -10,7 +10,7 @@ interface Props {
 export default function Contact({ indexSelected, logo }: Props) {
     return (
         <>
-            <Header indexSelected={indexSelected} existsButton={false} logo={logo} />
+            <Header indexSelected={indexSelected} logo={logo} phone={'./assets/phone.png'} map={'./assets/map.png'} />
             <BodyContact />
             <Footer indexSelected={indexSelected} />
         </>
