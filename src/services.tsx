@@ -7,7 +7,6 @@ import Informacion from './body/informacion';
 import ContactBar from './body/ContactBar';
 import Inicio from './body/Inicio';
 
-
 import { useEffect } from "react";
 
 interface Props {
