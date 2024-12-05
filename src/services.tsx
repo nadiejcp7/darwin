@@ -1,7 +1,7 @@
 import Footer from './footer/Footer';
 import Header from './header/Header';
 
-import './body.css'
+import './body/body.css'
 import Contenedor from './body/contenedor'
 import Informacion from './body/informacion';
 import ContactBar from './body/ContactBar';
