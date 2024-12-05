@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './header.css'
+import logo from "../../public/logo.png";
 
 interface Props {
     existsButton?: boolean
@@ -29,7 +30,7 @@ export default function header({ existsButton = true, indexSelected }: Props) {
             </div>
             <div className='header-container-2'>
                 <a href="./home" className='logo-container'>
-                    <img className='logo-image' src="./public/logo.png" alt="Darwin Construction Logo" />
+                    <img className='logo-image' src={logo} alt="Darwin Construction Logo" />
                 </a>
                 <div className='links-container'>
                     {elements.map((item, index) =>
