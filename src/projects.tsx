@@ -5,14 +5,19 @@ import Header from './header/Header';
 interface Props {
     indexSelected: number
     logo: string
+    phoneHeader: string
+    mapHeader: string
+
+    socialSrc: string[]
+    contactSrc: string[]
 }
 
-export default function Projects({ indexSelected, logo }: Props) {
+export default function Projects({ indexSelected, logo, phoneHeader, mapHeader, socialSrc, contactSrc }: Props) {
     return (
         <>
-            <Header indexSelected={indexSelected} logo={logo} phone={'./assets/phone.png'} map={'./assets/map.png'} />
+            <Header indexSelected={indexSelected} logo={logo} phone={phoneHeader} map={mapHeader} />
             <BodyProjects />
-            <Footer indexSelected={indexSelected} />
+            <Footer indexSelected={indexSelected} logo={logo} socialSrc={socialSrc} contactSrc={contactSrc} />
         </>
     );
 }

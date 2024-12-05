@@ -1,19 +1,22 @@
 import Body from './body/Body';
 import Footer from './footer/Footer';
 import Header from './header/Header';
-import phone from './assets/phone.png';
 
 interface Props {
     indexSelected: number
     logo: string
+    phoneHeader: string
+    mapHeader: string
+    socialSrc: string[]
+    contactSrc: string[]
 }
 
-export default function Home({ indexSelected, logo }: Props) {
+export default function Home({ indexSelected, logo, phoneHeader, mapHeader, socialSrc, contactSrc }: Props) {
     return (
         <>
-            <Header indexSelected={indexSelected} logo={logo} phone={phone} map={'./assets/map.png'} />
+            <Header indexSelected={indexSelected} logo={logo} phone={phoneHeader} map={mapHeader} />
             <Body />
-            <Footer indexSelected={indexSelected} />
+            <Footer indexSelected={indexSelected} logo={logo} socialSrc={socialSrc} contactSrc={contactSrc} />
         </>
     );
 }

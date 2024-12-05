@@ -3,18 +3,19 @@ import Navigator from './Navigator';
 
 interface Props {
     indexSelected: number
+    logo: string
+    socialSrc: string[]
+    contactSrc: string[]
 }
 
-function footer({ indexSelected }: Props) {
+function footer({ indexSelected, logo, socialSrc, contactSrc }: Props) {
     const elementsNav = ['Home', 'About', 'Services', 'Projects', 'Contact'];
     const hrefsNav = ['/home', '/about', '/services', '/projects', '/contact'];
 
     const elementsContact = ['(289) 681-3004', 'darwinconstruction@outlook.com', '310 Barton St E Hamilton, ON']
-    const contactSrc = ['./public/phoneBlack.png', './public/mailBlack.png', './public/mapBlack.png']
     const hrefsContact = ['tel:+12896813004', 'mailto:darwinconstruction@outlook.com', 'https://maps.app.goo.gl/hDeMg2C1bCQN6SsT7']
 
     const elementsSocial = ['YouTube', 'TikTok', 'Instagram', 'Facebook', 'LinkedIn']
-    const socialSrc = ['./public/Youtube.png', './public/TikTok.png', './public/Instagram.png', './public/Facebook.png', './public/LinkedIn.png']
     const hrefSocial = ['YouTube', 'TikTok', 'Instagram', 'Facebook', 'LinkedIn']
 
     return (<>
@@ -29,7 +30,7 @@ function footer({ indexSelected }: Props) {
                 <div className='hidden footer-container-info'>
                     <div className='footer-container-info-description'>
                         <div className='footer-logo-container'>
-                            <a href='/home'><img src="./public/logo.png" alt="" className='footer-logo' /></a>
+                            <a href='/home'><img src={logo} alt="" className='footer-logo' /></a>
                         </div>
                         <p className='catchy-phrase-bottom'>Your vision, our expertise. Let's create extraordinary things together.</p>
                     </div>
