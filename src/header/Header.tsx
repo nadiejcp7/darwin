@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import './header.css'
-import logo from "./assets/logo.png";
 
 interface Props {
     existsButton?: boolean
     indexSelected: number
+    logo: string
 }
 
-export default function header({ existsButton = true, indexSelected }: Props) {
+export default function header({ existsButton = true, indexSelected, logo }: Props) {
     const elements = ['Home', 'About', 'Services', 'Projects', 'Contact'];
     const links = ['./home', './about', './services', './projects', './contact'];
 
