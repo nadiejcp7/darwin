@@ -11,7 +11,7 @@ import logo from './assets/logo.png';
 import phoneHeader from './assets/phone.png';
 import mapHeader from './assets/map.png';
 
-import yt from './assets/Youtube.png';
+import yt from './assets/YouTube.png';
 import tk from './assets/TikTok.png'
 import ig from './assets/Instagram.png'
 import fb from './assets/Facebook.png'
