@@ -16,10 +16,10 @@ export default function App() {
       <Routes>
         <Route index element={<Home indexSelected={0} logo={logo} />} />
         <Route path="/home" element={<Home indexSelected={0} logo={logo} />} />
-        <Route path="/about" element={<About indexSelected={1} />} />
-        <Route path="/services" element={<Services indexSelected={2} />} />
-        <Route path="/projects" element={<Projects indexSelected={3} />} />
-        <Route path="/contact" element={<Contact indexSelected={4} />} />
+        <Route path="/about" element={<About indexSelected={1} logo={logo} />} />
+        <Route path="/services" element={<Services indexSelected={2} logo={logo} />} />
+        <Route path="/projects" element={<Projects indexSelected={3} logo={logo} />} />
+        <Route path="/contact" element={<Contact indexSelected={4} logo={logo} />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

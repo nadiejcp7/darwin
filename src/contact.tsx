@@ -4,12 +4,13 @@ import Header from './header/Header';
 
 interface Props {
     indexSelected: number
+    logo: string
 }
 
-export default function Contact({ indexSelected }: Props) {
+export default function Contact({ indexSelected, logo }: Props) {
     return (
         <>
-            <Header indexSelected={indexSelected} existsButton={false} />
+            <Header indexSelected={indexSelected} existsButton={false} logo={logo} />
             <BodyContact />
             <Footer indexSelected={indexSelected} />
         </>

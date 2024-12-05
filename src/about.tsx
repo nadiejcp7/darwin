@@ -4,12 +4,13 @@ import Header from './header/Header';
 
 interface Props {
     indexSelected: number
+    logo: string
 }
 
-export default function About({ indexSelected }: Props) {
+export default function About({ indexSelected, logo }: Props) {
     return (
         <>
-            <Header indexSelected={indexSelected} />
+            <Header indexSelected={indexSelected} logo={logo} />
             <BodyAbout />
             <Footer indexSelected={indexSelected} />
         </>
